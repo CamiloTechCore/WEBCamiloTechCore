@@ -1,0 +1,46 @@
+{
+  "header": {
+    "about": "Sobre mí",
+    "projects": "Proyectos",
+    "blog": "Blog",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "subtitle1": "Analista de Datos",
+    "subtitle2": "Desarrollador de Software",
+    "subtitle3": "Analista de Datos y Desarrollador Web",
+    "subtitle4": "Mercado Libre | Quality Monitor",     
+    "subtitle5": "Ahora, como estudiante en:",
+    "subtitle6": "Ingeniería de Sistemas",
+    "subtitle7": "Platzi, Coursera y Google Cloud",
+    "subtitle8": "Habilidades y Tecnologías",
+    "subtitle9": "Ahora, como estudiante de:",
+    "subtitle10": "Ingeniería de Sistemas",
+    "subtitle11": "y con formación continua en plataformas como:"
+  },
+  "skills": {
+    "title": "Habilidades y Tecnologías"
+  },
+  "parragraps":{
+    "tittleinit": "Me apasiona la intersección donde los datos cobran vida a través del desarrollo. Construyo herramientas interactivas y soluciones web que facilitan una toma de decisiones basada en evidencia.",
+    "tittle2": " Apasionado por transformar la información en decisiones estratégicas. Mi carrera profesional, que comenzó con roles de auditoría y monitoreo de calidad en empresas como:",
+    "tittle3": " He proporcionado una base sólida en el manejo y la depuración de grandes volúmenes de datos, asegurando siempre su integridad mediante muestreo estadístico y control riguroso.",  
+    "tittle4": "Mi trayectoria me ha permitido no solo identificar y reportar sobre métricas clave, sino también optimizar procesos mediante el desarrollo de automatizaciones como scripts y macros. Esta experiencia práctica en la gestión de la calidad operativa fue el catalizador que despertó mi interés por profundizar en la ciencia de datos para ir más allá del simple análisis.",
+    "tittle5": " y con formación continua en plataformas como:",
+    "tittle6": " mi objetivo es claro: fusionar mi capacidad analítica con el desarrollo web. Aspiro a construir proyectos más robustos e interactivos, donde los datos no solo se analicen, sino que se presenten a través de soluciones web intuitivas que permitan una toma de decisiones más ágil y acertada. Busco oportunidades donde pueda aplicar esta visión para optimizar procesos empresariales y aportar soluciones innovadoras basadas en evidencia empírica.",
+    "tittle7": "Platzi, Coursera, Google Cloud, SENATIC y plataformas libres de Bootcamps impartidos por las MINTICS, mi objetivo es claro: fusionar mi capacidad analítica con el desarrollo web. Aspiro a construir proyectos más robustos e interactivos, donde los datos no solo se analicen, sino que se presenten a través de soluciones web intuitivas que permitan una toma de decisiones más ágil y acertada. Busco oportunidades donde pueda aplicar esta visión para optimizar procesos empresariales y aportar soluciones innovadoras basadas en evidencia empírica."
+  },
+  "contact":{
+    "p1": "Hablemos",
+    "p2": "¿Tienes una pregunta, una propuesta o simplemente quieres saludar? Envíame un mensaje.",
+    "p3": "Tu Nombre",
+    "p4": "Tu Correo Electrónico",
+    "p5": "Tu Mensaje",
+    "p6": "Enviar Mensaje",
+    "p7": "Enviando...",
+    "p8": "¡Mensaje enviado con éxito!",
+    "p9": "Error al enviar el mensaje. Por favor, inténtalo de nuevo.",
+    "p10": "Deja tu mensaje aquí...",
+    "p11": "Ejemplo@gmail.com"
+  }
+}

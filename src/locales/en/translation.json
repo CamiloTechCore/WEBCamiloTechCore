@@ -1,0 +1,45 @@
+{
+  "header": {
+    "about": "About Me",
+    "projects": "Projects",
+    "blog": "Blog",
+    "contact": "Contact"
+  },
+  "hero": {
+    "subtitle1": "Data Analyst",
+    "subtitle2": "Software Developer",
+    "subtitle3": "Data Analyst and Web Developer",
+    "subtitle4": "Mercado Libre | Quality Monitor",
+    "subtitle5": "Now, as a student in:",
+    "subtitle6": "Systems Engineering",
+    "subtitle7": "Platzi, Coursera and Google Cloud",
+    "subtitle8": "Skills & Technologies",
+    "subtitle9": "Now, as a student of:",
+    "subtitle10": "Systems Engineering"
+  },
+  "skills": {
+    "title": "Skills & Technologies"
+  },
+  "parragraps":{
+    "tittleinit": "I'm passionate about the intersection where data comes to life through development. I build interactive tools and web solutions that facilitate evidence-based decision-making.",
+    "tittle2": " I am passionate about transforming information into strategic decisions. My professional career, which began with roles in auditing and quality monitoring at companies such as:",
+    "tittle3": " I have provided a solid foundation in handling and debugging large volumes of data, always ensuring its integrity through statistical sampling and rigorous control.",
+    "tittle4": "My journey has allowed me not only to identify and report on key metrics but also to optimize processes through the development of automations like scripts and macros. This hands-on experience in operational quality management was the catalyst that sparked my interest in delving deeper into data science to go beyond simple analysis.",
+    "tittle5": " and with ongoing training on platforms like:",
+    "tittle6": " my goal is clear: to merge my analytical skills with web development. I aspire to build more robust and interactive projects, where data is not only analyzed but presented through intuitive web solutions that allow for quicker and more accurate decision-making. I seek opportunities where I can apply this vision to optimize business processes and provide innovative solutions based on empirical evidence.",
+    "tittle7": "Platzi, Coursera, Google Cloud, SENATIC and free platforms of Bootcamps taught by MINTICS, my goal is clear: to merge my analytical skills with web development. I aspire to build more robust and interactive projects, where data is not only analyzed but presented through intuitive web solutions that allow for quicker and more accurate decision-making. I seek opportunities where I can apply this vision to optimize business processes and provide innovative solutions based on empirical evidence."
+  },
+  "contact":{
+    "p1": "Let's Talk",
+    "p2": "Do you have a question, a proposal, or just want to say hi? Send me a message.",
+    "p3": "Your Name",
+    "p4": "Your Email",
+    "p5": "Your Message",
+    "p6": "Send Message",
+    "p7": "Sending...",
+    "p8": "Message sent successfully!",
+    "p9": "Error sending message. Please try again.",
+    "p10": "Leave your message here...",
+    "p11": "Example@gmail.com"
+  }
+}
