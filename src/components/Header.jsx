@@ -1,5 +1,3 @@
-// src/components/Header.jsx
-
 import { useState, useEffect } from 'react';
 import { Link as ScrollLink, scroller } from 'react-scroll';
 import { Link as RouterLink, useLocation, useNavigate } from 'react-router-dom';
@@ -35,7 +33,10 @@ const Header = ({ theme, toggleTheme }) => {
     navigate('/');
     setTimeout(() => {
       scroller.scrollTo(targetId, {
-        spy: true, smooth: true, offset: -80, duration: 500,
+        spy: true,
+        smooth: true,
+        offset: -80,
+        duration: 500,
       });
     }, 100);
   };
@@ -92,9 +93,8 @@ const Header = ({ theme, toggleTheme }) => {
           </div>
 
           <div className="flex items-center space-x-2">
-            <div className="hidden sm:flex items-center space-x-2">
+            <div className="hidden md:flex items-center space-x-2">
               <button onClick={toggleTheme} className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700">
-                {/* ✅ ERROR CORREGIDO: Se eliminó la barra inclinada '/' extra */}
                 {theme === 'light' ? <FiMoon size={20} /> : <FiSun size={20} />}
               </button>
               <button onClick={() => changeLanguage(i18n.language === 'es' ? 'en' : 'es')} className="text-sm font-semibold p-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700">
@@ -113,7 +113,7 @@ const Header = ({ theme, toggleTheme }) => {
       </header>
 
       <AnimatePresence>
-        {isMenuOpen && <MobileMenu closeMenu={() => setIsMenuOpen(false)} />}
+        {isMenuOpen && <MobileMenu closeMenu={() => setIsMenuOpen(false)} theme={theme} toggleTheme={toggleTheme} />}
       </AnimatePresence>
     </>
   );
