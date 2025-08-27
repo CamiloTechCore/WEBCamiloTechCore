@@ -12,7 +12,7 @@ function ContactSection() {
   const [status, setStatus] = useState('idle');
 
   // Asegúrate de que esta URL sea la de tu último despliegue de Apps Script.
-  const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxmvylKTV2OA1osfnauXG5zwvGT-buTZi3TYMAg2WaTWgg0CbJKQdc9DHvs9Je-I83Z/exec';
+  const SCRIPT_URL = import.meta.env.VITE_GOOGLE_SCRIPT_URL;
 
   const handleSubmit = async (event) => {
     event.preventDefault();
