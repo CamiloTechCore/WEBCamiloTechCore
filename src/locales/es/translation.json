@@ -42,5 +42,9 @@
     "p9": "Error al enviar el mensaje. Por favor, inténtalo de nuevo.",
     "p10": "Deja tu mensaje aquí...",
     "p11": "Ejemplo@gmail.com"
+  },
+  "proyects":{
+    "title":"Portafolio Personal",
+    "description":"Mi portafolio personal construido con React, Vite y Tailwind CSS, demostrando mis habilidades en desarrollo front-end y visualización de datos."
   }
 }

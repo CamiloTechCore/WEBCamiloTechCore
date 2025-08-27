@@ -41,5 +41,9 @@
     "p9": "Error sending message. Please try again.",
     "p10": "Leave your message here...",
     "p11": "Example@gmail.com"
+  },
+  "proyects":{
+    "title":"Personal Portfolio",
+    "description":"My personal portfolio built with React, Vite, and Tailwind CSS, showcasing my skills in front-end development and data visualization."
   }
 }
