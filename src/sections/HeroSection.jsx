@@ -41,11 +41,11 @@ function HeroSection() {
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="flex flex-col items-center"
+        className="flex flex-col items-center  text-center"
       >
         <motion.h1 
           variants={itemVariants}
-          className="text-5xl md:text-7xl font-black uppercase bg-clip-text text-transparent bg-gradient-to-r from-green-500
+          className="text-4xl sm:text-5xl md:text-7xl font-black uppercase bg-clip-text text-transparent bg-gradient-to-r from-green-500
            to-blue-500"
         >
           CamiloTechCore

@@ -92,7 +92,7 @@ const technologies = [
 function SkillsSection() {
   const { t } = useTranslation();
   return (
-    <section id="skills" className="py-24 bg-white dark:bg-gray-900 relative">
+    <section id="skills" className="py-24 bg-white dark:bg-gray-900 relative overflow-hidden">
       <div className="container mx-auto px-4">
       <BackgroundChart type="bar" className="container " />
       <div className="container mx-auto px-4 relative z-10">
@@ -103,7 +103,7 @@ function SkillsSection() {
         {/* 4. Crear el grid responsivo y mapear los datos */}
         <div className="mt-12 grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-4">
           {technologies.map((tech) => (
-            <TechnologyCard key={tech.name} name={tech.name} Icon={tech.Icon} />
+            <TechnologyCard key={tech.name} name={tech.name} Icon={tech.Icon} styling={tech.styling} />
           ))}
         </div>
       </div>
