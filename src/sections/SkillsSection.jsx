@@ -1,19 +1,45 @@
 // src/sections/SkillsSection.jsx
+
 import TechnologyCard from '../components/TechnologyCard';
-// 2. Importar los SVGs como componentes de React (¡magia de Vite!)
+import { useTranslation } from 'react-i18next';
+import BackgroundChart from '../components/BackgroundChart';
+
+// Importaciones de iconos
 import PandasIcon from '../assets/icons/pandas.svg?react';
-import ExcelIcon from '../assets/icons/googlesheets.svg?react';
+import ExcelIcon from '../assets/icons/excel.svg?react'; 
 import LookerIcon from '../assets/icons/looker.svg?react';
 import AppsScriptIcon from '../assets/icons/googleappsscript.svg?react';
 import JavascriptIcon from '../assets/icons/js.svg?react';
 import PythonIcon from '../assets/icons/python.svg?react';
 import Html5Icon from '../assets/icons/html5.svg?react';
 import Css3Icon from '../assets/icons/css3.svg?react';
-import BackgroundChart from '../components/BackgroundChart';
-import { useTranslation } from 'react-i18next';
 
+// Si usaste Framer Motion para la "nube", estas variantes podrían estar aquí.
+// Si las ves, elimínalas o coméntalas, no son necesarias para las TechnologyCards.
+/*
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
 
-// 3. Definir los datos de las tecnologías
+const itemVariants = {
+  hidden: { y: 20, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      type: "spring",
+      stiffness: 100,
+    },
+  },
+};
+*/
+
 const technologies = [
   { 
     name: 'Python', 
@@ -91,22 +117,24 @@ const technologies = [
 
 function SkillsSection() {
   const { t } = useTranslation();
+
   return (
     <section id="skills" className="py-24 bg-white dark:bg-gray-900 relative overflow-hidden">
-      <div className="container mx-auto px-4">
-      <BackgroundChart type="bar" className="container " />
+      
+      <BackgroundChart type="bar" />
+      
       <div className="container mx-auto px-4 relative z-10">
-        <h2 className="text-center text-4xl font-bold text-gray-800 dark:text-white">
-          {t('hero.subtitle8')}
+        <h2 className="text-center text-4xl font-bold text-gray-800 dark:text-white mb-12">
+          {t('skills.title')}
         </h2>
         
-        {/* 4. Crear el grid responsivo y mapear los datos */}
-        <div className="mt-12 grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-4">
+        {/* ✅ ESTE ES EL ÚNICO BLOQUE QUE DEBE RENDERIZAR LAS HABILIDADES */}
+        {/* Asegúrate de que no haya otro div o span que intente hacer una "nube de palabras" aquí */}
+        <div className="mt-12 grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 max-w-4xl mx-auto">
           {technologies.map((tech) => (
             <TechnologyCard key={tech.name} name={tech.name} Icon={tech.Icon} styling={tech.styling} />
           ))}
         </div>
-      </div>
       </div>
     </section>
   );
