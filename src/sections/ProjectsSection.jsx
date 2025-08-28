@@ -44,9 +44,9 @@ function ProjectsSection() {
         </div>
 
         <h3 className="text-3xl font-bold text-center mb-8 text-gray-800 dark:text-white">
-          Tecnologías Más Utilizadas
+          {t('skills.title')}
         </h3>
-        <div className="w-full h-80 flex justify-center items-center">
+        <div className="w-full flex justify-center items-center">
           {isClient && (
             // ✅ 3. Implementamos el Wordcloud de VISX
             <Wordcloud
