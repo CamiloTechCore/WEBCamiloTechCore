@@ -43,6 +43,7 @@ function ContactSection() {
 
   return (
     <section id="contact" className="py-24 bg-white dark:bg-gray-900">
+      <div className="container mx-auto px-4">
       <div className="container mx-auto px-4 max-w-2xl">
         <h2 className="text-center text-4xl font-bold text-gray-800 dark:text-white mb-8">
           {t('contact.p1')}
@@ -103,6 +104,7 @@ function ContactSection() {
 
         {status === 'success' && <p className="text-center text-green-500 mt-4">{t('contact.p8')}</p>}
         {status === 'error' && <p className="text-center text-red-500 mt-4">{t('contact.p9')}</p>}
+      </div>
       </div>
     </section>
   );

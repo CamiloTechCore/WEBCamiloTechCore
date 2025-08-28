@@ -93,6 +93,7 @@ function SkillsSection() {
   const { t } = useTranslation();
   return (
     <section id="skills" className="py-24 bg-white dark:bg-gray-900 relative">
+      <div className="container mx-auto px-4">
       <BackgroundChart type="bar" className="container " />
       <div className="container mx-auto px-4 relative z-10">
         <h2 className="text-center text-4xl font-bold text-gray-800 dark:text-white">
@@ -105,6 +106,7 @@ function SkillsSection() {
             <TechnologyCard key={tech.name} name={tech.name} Icon={tech.Icon} />
           ))}
         </div>
+      </div>
       </div>
     </section>
   );

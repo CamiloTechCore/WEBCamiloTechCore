@@ -36,6 +36,7 @@ function HeroSection() {
 
   return (
     <section id="home" className="h-screen flex items-center justify-center text-center bg-white dark:bg-gray-950">
+      <div className="container mx-auto px-4">
       <motion.div
         variants={containerVariants}
         initial="hidden"
@@ -62,6 +63,7 @@ function HeroSection() {
        {t('parragraps.tittleinit')}        
         </motion.p>
       </motion.div>
+      </div>
     </section>
   );
 }

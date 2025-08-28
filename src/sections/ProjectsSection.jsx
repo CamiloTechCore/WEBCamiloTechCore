@@ -33,6 +33,7 @@ function ProjectsSection() {
   return (
     <section id="projects" className="py-24 bg-gray-50 dark:bg-gray-950">
       <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold text-center mb-12 text-gray-800 dark:text-white">
           {t('header.projects')}
         </h2>
@@ -76,6 +77,7 @@ function ProjectsSection() {
             </Wordcloud>
           )}
         </div>
+      </div>
       </div>
     </section>
   );

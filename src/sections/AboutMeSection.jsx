@@ -43,6 +43,7 @@ function AboutMeSection() {
   return (
     // Asignamos la referencia 'ref' a la sección para que 'useInView' la observe
     <section id="about" ref={ref} className="py-24 bg-white dark:bg-gray-900">
+      <div className="container mx-auto px-4">
       <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         
         {/* Columna de la Imagen */}
@@ -75,7 +76,7 @@ function AboutMeSection() {
         </div>
 
         {/* Columna del Texto */}
-        <div>
+          <div>
           <h2 className="text-4xl font-bold mb-4 text-gray-800 dark:text-white">{t('header.about')}</h2>
           <p className="text-gray-600 dark:text-gray-300 leading-relaxed">{t('parragraps.tittle2')}</p>
           <br></br>
@@ -88,6 +89,7 @@ function AboutMeSection() {
           <p className="text-gray-600 dark:text-gray-300 leading-relaxed"><strong>{t('hero.subtitle10')} </strong> {t('hero.subtitle11')}</p>
           <br></br>
           <p className="text-gray-600 dark:text-gray-300 leading-relaxed">{t('parragraps.tittle7')}</p>
+          </div>
         </div>
       </div>
     </section>
