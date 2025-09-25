@@ -33,7 +33,24 @@ function BlogPostPage() {
         <div className="prose dark:prose-invert max-w-none text-lg leading-relaxed">
           {/* Aquí iría el contenido completo del post. Por ahora usamos el resumen. */}
           <p>{post.summary}</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.</p>
+          <p>El andamiaje cognitivo (cognitive scaffolding) es una estrategia pedagógica esencial que facilita el aprendizaje al proporcionar apoyo estructurado y temporal a los estudiantes. Este enfoque se basa en cinco claves interconectadas que, al aplicarse de manera iterativa, construyen un flujo de aprendizaje lógico y autónomo. El proceso inicia con la clara definición de objetivos, seguido de la provisión de apoyo gradual y diferenciado. A medida que el aprendiz avanza, se fomenta la práctica independiente y se brinda retroalimentación específica y oportuna. El ciclo culmina con la retirada progresiva del andamiaje, permitiendo que el estudiante internalice las habilidades y logre la competencia de manera autónoma. Este método no solo mejora el rendimiento, sino que también fomenta la meta-cognición, la auto-regulación y la confianza, transformando al estudiante en un aprendiz activo y capaz de enfrentar nuevos desafíos.</p>
+          <ul>
+            <li>
+            <p><b>Clave 1: La Meta - Definición Clara de Objetivos.</b> Este pilar establece la dirección, desglosando una meta grande en             sub-objetivos manejables para crear una hoja de ruta clara.</p>
+            </li>
+            <li>
+            <p><b>Clave 2: El Andamio - Provisión de Apoyo Gradual.</b> Aquí se brinda el soporte necesario, desde la demostración inicial hasta el             uso de herramientas, adaptando la ayuda a las necesidades del aprendiz.</p>
+            </li>
+            <li>
+            <p><b>Clave 3: El Aprendiz en Acción - Fomento de la Práctica Independiente.</b> Se anima al estudiante a aplicar lo aprendido de manera            autónoma, promoviendo la auto-evaluación y la meta-cognición.</p>
+            </li>
+            <li>
+            <p><b>Clave 4: La Brújula - Retroalimentación Específica y Oportuna.</b> Se proporciona feedback constructivo y procesal para que el            aprendiz comprenda sus errores y sepa cómo corregirlos.</p>
+            </li>
+            <li>
+            <p><b>Clave 5: La Autonomía - Retirada Gradual del Andamiaje.</b> El apoyo se retira progresivamente a medida que el aprendiz demuestra             competencia, asegurando la transferencia del conocimiento y la independencia a largo plazo.</p>
+            </li>
+          </ul>
         </div>
       </div>
     </article>
