@@ -34,6 +34,7 @@ function BlogPostPage() {
           {/* Aquí iría el contenido completo del post. Por ahora usamos el resumen. */}
           <p>{post.summary}</p>
           <p>El andamiaje cognitivo (cognitive scaffolding) es una estrategia pedagógica esencial que facilita el aprendizaje al proporcionar apoyo estructurado y temporal a los estudiantes. Este enfoque se basa en cinco claves interconectadas que, al aplicarse de manera iterativa, construyen un flujo de aprendizaje lógico y autónomo. El proceso inicia con la clara definición de objetivos, seguido de la provisión de apoyo gradual y diferenciado. A medida que el aprendiz avanza, se fomenta la práctica independiente y se brinda retroalimentación específica y oportuna. El ciclo culmina con la retirada progresiva del andamiaje, permitiendo que el estudiante internalice las habilidades y logre la competencia de manera autónoma. Este método no solo mejora el rendimiento, sino que también fomenta la meta-cognición, la auto-regulación y la confianza, transformando al estudiante en un aprendiz activo y capaz de enfrentar nuevos desafíos.</p>
+          <br/>
           <ul>
             <li>
             <p><b>Clave 1: La Meta - Definición Clara de Objetivos.</b> Este pilar establece la dirección, desglosando una meta grande en             sub-objetivos manejables para crear una hoja de ruta clara.</p>

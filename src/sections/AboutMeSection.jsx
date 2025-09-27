@@ -26,7 +26,7 @@ function AboutMeSection() {
       const timer = setTimeout(() => {
         setShowSecondImage(true);
         setHasAnimated(true); // Marca que la animación ya ocurrió
-      }, 500); // 500ms de retraso después de ser visible
+      }, 3000); // 500ms de retraso después de ser visible
 
       // Limpieza del temporizador
       return () => clearTimeout(timer);
