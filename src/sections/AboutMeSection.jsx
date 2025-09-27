@@ -80,7 +80,7 @@ function AboutMeSection() {
           <h2 className="text-4xl font-bold mb-4 text-gray-800 dark:text-white">{t('header.about')}</h2>
           <p className="text-gray-600 dark:text-gray-300 leading-relaxed">{t('parragraps.tittle2')}</p>
           <br></br>
-          <p><strong>Mercado Libre | Quality Monitor</strong></p><p className="text-gray-600 dark:text-gray-300 leading-relaxed">{t('parragraps.tittle3')}</p>
+          <p className='text-gray-600 dark:text-gray-300 leading-relaxed'><strong>Mercado Libre | Quality Monitor</strong></p><p className="text-gray-600 dark:text-gray-300 leading-relaxed">{t('parragraps.tittle3')}</p>
           <br></br>
           <p className="text-gray-600 dark:text-gray-300 leading-relaxed">{t('parragraps.tittle4')}</p>
           <br></br>
