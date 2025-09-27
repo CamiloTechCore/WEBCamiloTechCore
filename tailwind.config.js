@@ -10,7 +10,7 @@ export default {
       // Próximamente: El ADN de "Camilo Tech Core" (colores, fuentes) vivirá aquí.
       colors: {
         'primary': '#7FFF00', // ✅ Color primario 
-        'python': '#3776AB',
+        'python': '#FFD700',
         'pandas': '#130754',
         'html': '#E34F26',
         'css': '#1572B6',

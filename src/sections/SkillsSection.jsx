@@ -13,6 +13,7 @@ import JavascriptIcon from '../assets/icons/js.svg?react';
 import PythonIcon from '../assets/icons/python.svg?react';
 import Html5Icon from '../assets/icons/html5.svg?react';
 import Css3Icon from '../assets/icons/css3.svg?react';
+import GcpIcon from '../assets/icons/GCP.svg?react';
 
 // Si usaste Framer Motion para la "nube", estas variantes podrían estar aquí.
 // Si las ves, elimínalas o coméntalas, no son necesarias para las TechnologyCards.
@@ -45,9 +46,9 @@ const technologies = [
     name: 'Python', 
     Icon: PythonIcon, 
     styling: {
-      gradient: 'bg-gradient-to-br from-yellow-300 to-blue-500',
-      iconColor: 'text-white',
-      textColor: 'text-white'
+      bgColor: 'bg-indigo-50 dark:bg-gray-800',
+      borderColor: 'border-python',
+      iconColor: 'text-python'
     } 
   },
   { 
@@ -111,6 +112,15 @@ const technologies = [
       bgColor: 'bg-blue-50 dark:bg-gray-800',
       borderColor: 'border-looker',
       iconColor: 'text-looker'
+    } 
+  },
+  { 
+    name: 'Google Cloud Platform', 
+    Icon: GcpIcon, 
+    styling: {
+      bgColor: 'bg-blue-50 dark:bg-gray-800',
+      borderColor: 'border-looker',
+      iconColor: 'text-Gcp'
     } 
   },
 ];
