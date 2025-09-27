@@ -11,8 +11,8 @@ export const projects = [
     imageUrl: project1Img,
     tags: ['React', 'Tailwind CSS', 'Vite', 'Framer Motion', 'Data Viz'],
     links: {
-      github: 'https://github.com/CamiloTechCore',
-      live: 'https://tu-dominio.dev',
+      github: 'https://github.com/CamiloTechCore/CamiloTechCore',
+      live: 'https://camilotechcore.vercel.app/',
     },
   },
   // Añade más proyectos aquí...
