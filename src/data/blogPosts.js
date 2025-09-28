@@ -6,7 +6,7 @@ import cognitiveScaffoldingImg from '../assets/cognitivescaffolding.png';
 export const posts = [
   {
     id: 1,
-    slug: 'mi-primer-post-de-analitica',
+    slug: 'cognitivescaffolding',
     title: '5 pasos para el cognitive scaffolding',
     date: '02 de Agosto, 2025',
     summary: 'Este enfoque iterativo garantiza que el proceso de cognitive scaffolding sea dinámico y adaptativo, permitiendo que el aprendizaje sea un ciclo continuo de apoyo, práctica, retroalimentación y autonomía progresiva.',
