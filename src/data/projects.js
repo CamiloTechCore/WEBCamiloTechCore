@@ -3,6 +3,7 @@
 // Importa tus imágenes de proyecto
 import project1Img from '../assets/project1.png';
 import project2Img from '../assets/Project2.png';
+import project3Img from '../assets/Project3.png'
 //const { t } = useTranslation();
 export const projects = [
   {
@@ -24,6 +25,18 @@ export const projects = [
     tags: ['AppScripts', 'CSS', 'Sheets', 'Javascript', 'HTML'],
     links: {
       github: 'https://github.com/CamiloTechCore/AVA-Lents.git'
+    },
+  },
+  {
+    id: 3,
+    title: 'P&PF | Finances',
+    description: 'P&PF | Finances es una plataforma integral de gestión financiera diseñada para centralizar el control de ingresos, gastos y metas de ahorro con un enfoque en proyecciones de crecimiento patrimonial.',
+    imageUrl: project3Img,
+    tags: ['React 18 & Vite', 'Axios', 'Recharts', 'Javascript', 'HTML', 'jsPDF & AutoTable', 'Node' , 'Supabase', 'Bcrypt', 'Helmet & CORS'],
+    links: {
+      github: 'https://github.com/CamiloTechCore/ProfesionalPF/tree/main/ProfesionalPF',
+      live: 'https://profesional-pf-git-main-camilotechcores-projects.vercel.app/'
+
     },
   }
 ];
