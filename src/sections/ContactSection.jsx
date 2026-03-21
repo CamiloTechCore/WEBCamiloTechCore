@@ -11,32 +11,44 @@ function ContactSection() {
   const [message, setMessage] = useState('');
   const [status, setStatus] = useState('idle');
 
-  // Asegúrate de que esta URL sea la de tu último despliegue de Apps Script.
-  const SCRIPT_URL = import.meta.env.VITE_GOOGLE_SCRIPT_URL;
+  const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+  const supabaseKey = import.meta.env.VITE_SUPABASE_KEY;
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     setStatus('sending');
 
     try {
-      // Solución definitiva para CORS con Google Apps Script usando 'no-cors'
-      await fetch(SCRIPT_URL, {
+      if (!supabaseUrl || !supabaseKey) {
+        throw new Error('Supabase credentials missing');
+      }
+
+      const endpoint = `${supabaseUrl.replace(/\/+$/, '')}/rest/v1/scr_contact_portafolio`;
+      const response = await fetch(endpoint, {
         method: 'POST',
-        mode: 'no-cors',
         headers: {
           'Content-Type': 'application/json',
+          'apikey': supabaseKey,
+          'Authorization': `Bearer ${supabaseKey}`,
         },
-        body: JSON.stringify({ name, email, message }),
+        body: JSON.stringify({
+          name: name,
+          email_contact: email,
+          comments_menssaje: message,
+        }),
       });
 
-      // Si fetch no lanza un error de red, asumimos que fue exitoso.
+      if (!response.ok) {
+        throw new Error(`API error: ${response.statusText}`);
+      }
+
       setStatus('success');
       setName('');
       setEmail('');
       setMessage('');
 
     } catch (error) {
-      console.error('Error de red al enviar el formulario:', error);
+      console.error('Error al enviar el formulario:', error);
       setStatus('error');
     }
   };
