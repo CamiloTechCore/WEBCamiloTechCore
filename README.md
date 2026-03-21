@@ -1,34 +1,40 @@
-# React + Vite
+# CamiloTechCore Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Portfolio personal construido con **React + Vite**, conectado a **Supabase** como base de datos.
 
-Currently, two official plugins are available:
+## 🚀 Stack tecnológico
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Frontend**: React 18 + Vite
+- **Base de datos**: Supabase (PostgreSQL)
+- **Styles**: Tailwind CSS
+- **Routing**: React Router v7
+- **Internacionalización**: i18next
+- **Animaciones**: Framer Motion
 
-## Expanding the ESLint configuration
+## 📋 Tabla de contenidos
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- [Instalación](#instalación)
+- [Configuración de Supabase](#configuración-de-supabase)
+- [Ejecutar en desarrollo](#ejecutar-en-desarrollo)
+- [Features](#features)
 
-## Health check / DB connection validation
+## 💻 Instalación
 
-Para validar la conexión a la base de datos desde el frontend se agrega un chequeo de salud en `src/App.jsx`:
-
-- Definir `VITE_API_BASE_URL` en `.env`.
-- Consumir `GET {VITE_API_BASE_URL}/health` y evaluar el resultado.
-- Estado visible en la barra superior de la app (`conectado`, `offline`, `unhealthy`).
-
-Ejemplo de respuesta de backend esperado:
-
-```json
-{ "db": "ok" }
+```bash
+npm install
 ```
 
-## Supabase (creación y conexión)
+## 🗄️ Configuración de Supabase
 
-1. Entra a https://app.supabase.com, crea un proyecto gratuito.
-2. En el panel `SQL editor`, se crea la tabla de contacto (ya existe en tu proyecto):
+### Crear proyecto en Supabase
+
+1. Accede a [https://app.supabase.com](https://app.supabase.com)
+2. Crea un nuevo proyecto (opción gratuita disponible)
+3. Espera a que se inicialice la BD
+
+### Crear tabla de contactos
+
+En el panel **SQL Editor** de Supabase, ejecuta:
 
 ```sql
 create table if not exists scr_contact_portafolio (
@@ -40,40 +46,83 @@ create table if not exists scr_contact_portafolio (
 );
 ```
 
-3. En `Authentication > Policies`, habilita acceso `INSERT`, `SELECT` para `scr_contact_portafolio` (anonimous user).
-4. Copia desde `Project settings > API`:
-   - `API URL`: tiene la forma `https://xyz.supabase.co`
-   - `anon public key` (SUPABASE_KEY)
+### Configurar Row Level Security (RLS)
 
-5. Ya está en tu proyecto `.env`:
+En la tabla `scr_contact_portafolio` → **Authentication** → **Policies**:
 
-```
+1. **Política INSERT** (`Allow anonymous INSERT`):
+   - Command: `INSERT`
+   - With Check: `true`
+
+2. **Política SELECT** (`Allow anonymous SELECT`):
+   - Command: `SELECT`
+   - Using: `true`
+
+### Variables de entorno
+
+Copia desde **Project settings > API**:
+- `API URL`
+- `anon public` key
+
+Crea archivo `.env` en la raíz del proyecto:
+
+```env
 VITE_SUPABASE_URL=https://laaxrsdxiysgsyhlgukn.supabase.co
 VITE_SUPABASE_KEY=sb_publishable_EoOwGr5fYpR9vtKTn6JWsQ_nT89KL01
 ```
 
-6. `src/App.jsx`: chequeo de salud valida `GET ${VITE_SUPABASE_URL}/rest/v1/scr_contact_portafolio?select=id&limit=1`.
+> **⚠️ Seguridad**: `.env` está en `.gitignore`, no se subirá al repositorio.
 
-7. `src/sections/ContactSection.jsx`: inserta en `scr_contact_portafolio` con mapeo:
-   - `name` → campo `name`
-   - `email` → campo `email_contact`
-   - `message` → campo `comments_menssaje`
+## 🚀 Ejecutar en desarrollo
 
-8. Ejecuta:
-
-```
+```bash
 npm run dev
 ```
 
-- Barra superior muestra el estado:
-  - ✅ `connected`: tabla accesible
-  - ⚠️ `unhealthy`: tabla vacía o problemas
-  - ❌ `offline`: falla la llamada
-  - ❌ `missing-endpoint` o `missing-key` si faltan variables
+Abre [http://localhost:5173](http://localhost:5173) en tu navegador.
 
-- Formulario de contacto:
-  - Envía datos a Supabase directamente
-  - Respuesta: ✅ éxito → borra campos y muestra mensaje
-  - Respuesta: ❌ error → muestra mensaje rojo
+### Banner de estado BD
+
+En la barra superior verás el estado de conexión con Supabase:
+- ✅ **Conexión a base de datos OK**: todo funciona
+- ⚠️ **Conexión establecida pero no óptima**: tabla vacía o error leve
+- ❌ **No se pudo conectar**: falla de red o credenciales inválidas
+- ❌ **Falta VITE_SUPABASE_URL/KEY**: variables de entorno no configuradas
+- ⏳ **Verificando**: chequeo inicial en curso
+
+## 📝 Formulario de contacto
+
+Envía mensajes directamente a Supabase:
+
+```
+Nombre → campo "name"
+Email → campo "email_contact"
+Mensaje → campo "comments_menssaje"
+```
+
+Respuestas:
+- ✅ **Éxito**: campos limpiados + mensaje verde
+- ❌ **Error**: mensaje rojo con detalles
+
+El chequeo de salud se realiza automáticamente cada 30 segundos.
+
+## 📦 Scripts disponibles
+
+- `npm run dev` — Inicia servidor de desarrollo
+- `npm run build` — Compila para producción
+- `npm run preview` — Previsualiza build
+- `npm run lint` — Valida código
+
+## 📄 Licencia
+
+MIT
+
+---
+
+**Nota**: Este proyecto está optimizado para demostración de portfolio. Para producción, considera:
+- Validar datos en backend
+- Usar variables de entorno más seguras
+- Implementar rate limiting
+- Adicionar autenticación
 
 

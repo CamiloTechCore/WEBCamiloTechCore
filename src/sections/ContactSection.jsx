@@ -80,7 +80,7 @@ function ContactSection() {
           <div className="mb-6">
             <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">{t('contact.p4')}</label>
             <input
-              type="email" // Corregido: el 'type' debe ser un valor HTML estándar
+              type="email"
               id="email"
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
               placeholder={t('contact.p11')}

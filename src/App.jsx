@@ -4,28 +4,19 @@ import { Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import HomePage from './pages/HomePage';
 import BlogPage from './pages/BlogPage';
-import BlogPostPage from './pages/BlogPostPage'; // 1. Importa la nueva página
+import BlogPostPage from './pages/BlogPostPage';
 
 function App() {
-    // 1. Estado para el tema actual. Leemos el valor guardado en localStorage o usamos 'light' por defecto.
   const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
 
-  // 2. Función para cambiar el tema. La pasaremos al Header.
   const toggleTheme = () => {
     setTheme(prevTheme => (prevTheme === 'light' ? 'dark' : 'light'));
   };
 
-  // 3. useEffect para aplicar los cambios cuando el estado 'theme' cambie.
   useEffect(() => {
-    const root = window.document.documentElement; // La etiqueta <html>
-    
-    // Eliminamos la clase anterior para evitar conflictos
+    const root = window.document.documentElement;
     root.classList.remove(theme === 'light' ? 'dark' : 'light');
-    
-    // Añadimos la clase actual
     root.classList.add(theme);
-    
-    // Guardamos la preferencia en localStorage
     localStorage.setItem('theme', theme);
   }, [theme]);
 
@@ -69,7 +60,7 @@ function App() {
     };
 
     checkDbConnection();
-    const interval = setInterval(checkDbConnection, 30_000); // cada 30s
+    const interval = setInterval(checkDbConnection, 30_000);
     return () => clearInterval(interval);
   }, []);
 
@@ -79,7 +70,9 @@ function App() {
         {dbStatus === 'connected' && '✅ Conexión a base de datos OK'}
         {dbStatus === 'unhealthy' && '⚠️ Conexión establecida pero salud de DB no óptima'}
         {dbStatus === 'offline' && '❌ No se pudo conectar a la API/BD'}
-        {dbStatus === 'missing-endpoint' && '❌ Falta VITE_API_BASE_URL en .env'}        {dbStatus === 'missing-key' && '❌ Falta VITE_SUPABASE_ANON_KEY en .env'}        {dbStatus === 'unknown' && '⏳ Verificando conexión con la API/BD...'}
+        {dbStatus === 'missing-endpoint' && '❌ Falta VITE_SUPABASE_URL en .env'}
+        {dbStatus === 'missing-key' && '❌ Falta VITE_SUPABASE_KEY en .env'}
+        {dbStatus === 'unknown' && '⏳ Verificando conexión con la API/BD...'}
       </div>
       <Header theme={theme} toggleTheme={toggleTheme} />
       <main>
