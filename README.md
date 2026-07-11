@@ -1,11 +1,11 @@
-# CamiloTechCore Portfolio
+# WEBCamiloTechCore Portfolio
 
-Portfolio personal construido con **React + Vite**, conectado a **Supabase** como base de datos.
+Portfolio personal construido con **React + Vite** y un formulario de contacto que envía datos a **Google Sheets** mediante **Apps Script**.
 
 ## 🚀 Stack tecnológico
 
 - **Frontend**: React 18 + Vite
-- **Base de datos**: Supabase (PostgreSQL)
+- **Backend**: Google Apps Script / Google Sheets
 - **Styles**: Tailwind CSS
 - **Routing**: React Router v7
 - **Internacionalización**: i18next
@@ -14,7 +14,7 @@ Portfolio personal construido con **React + Vite**, conectado a **Supabase** com
 ## 📋 Tabla de contenidos
 
 - [Instalación](#instalación)
-- [Configuración de Supabase](#configuración-de-supabase)
+- [Configuración de Google Sheets](#configuración-de-google-sheets)
 - [Ejecutar en desarrollo](#ejecutar-en-desarrollo)
 - [Features](#features)
 
@@ -24,54 +24,19 @@ Portfolio personal construido con **React + Vite**, conectado a **Supabase** com
 npm install
 ```
 
-## 🗄️ Configuración de Supabase
+## 🗄️ Configuración de Google Sheets
 
-### Crear proyecto en Supabase
-
-1. Accede a [https://app.supabase.com](https://app.supabase.com)
-2. Crea un nuevo proyecto (opción gratuita disponible)
-3. Espera a que se inicialice la BD
-
-### Crear tabla de contactos
-
-En el panel **SQL Editor** de Supabase, ejecuta:
-
-```sql
-create table if not exists scr_contact_portafolio (
-  id bigint primary key generated always as identity,
-  name text not null,
-  email_contact text not null,
-  comments_menssaje text not null,
-  created_at timestamp default now()
-);
-```
-
-### Configurar Row Level Security (RLS)
-
-En la tabla `scr_contact_portafolio` → **Authentication** → **Policies**:
-
-1. **Política INSERT** (`Allow anonymous INSERT`):
-   - Command: `INSERT`
-   - With Check: `true`
-
-2. **Política SELECT** (`Allow anonymous SELECT`):
-   - Command: `SELECT`
-   - Using: `true`
-
-### Variables de entorno
-
-Copia desde **Project settings > API**:
-- `API URL`
-- `anon public` key
-
-Crea archivo `.env` en la raíz del proyecto:
+1. Crea un Google Spreadsheet y nómbralo como quieras.
+2. Crea una hoja llamada `BD`.
+3. Despliega un Google Apps Script que acepte `POST` y escriba los datos en la hoja `BD`.
+4. Copia el URL del script desplegado como app web.
+5. Crea un archivo `.env` en la raíz del proyecto con esta variable:
 
 ```env
-VITE_SUPABASE_URL=https://laaxrsdxiysgsyhlgukn.supabase.co
-VITE_SUPABASE_KEY=sb_publishable_EoOwGr5fYpR9vtKTn6JWsQ_nT89KL01
+VITE_GOOGLE_SHEETS_SCRIPT_URL=https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec
 ```
 
-> **⚠️ Seguridad**: `.env` está en `.gitignore`, no se subirá al repositorio.
+> **⚠️ Importante**: `.env` debe estar en `.gitignore` para que no se suba al repositorio.
 
 ## 🚀 Ejecutar en desarrollo
 
@@ -81,30 +46,25 @@ npm run dev
 
 Abre [http://localhost:5173](http://localhost:5173) en tu navegador.
 
-### Banner de estado BD
-
-En la barra superior verás el estado de conexión con Supabase:
-- ✅ **Conexión a base de datos OK**: todo funciona
-- ⚠️ **Conexión establecida pero no óptima**: tabla vacía o error leve
-- ❌ **No se pudo conectar**: falla de red o credenciales inválidas
-- ❌ **Falta VITE_SUPABASE_URL/KEY**: variables de entorno no configuradas
-- ⏳ **Verificando**: chequeo inicial en curso
-
 ## 📝 Formulario de contacto
 
-Envía mensajes directamente a Supabase:
+Envía mensajes directamente a Google Sheets mediante Apps Script.
 
-```
-Nombre → campo "name"
-Email → campo "email_contact"
-Mensaje → campo "comments_menssaje"
+Crea el Apps Script para recibir los campos:
+
+```json
+{
+  "name": "...",
+  "email": "...",
+  "message": "..."
+}
 ```
 
 Respuestas:
 - ✅ **Éxito**: campos limpiados + mensaje verde
 - ❌ **Error**: mensaje rojo con detalles
 
-El chequeo de salud se realiza automáticamente cada 30 segundos.
+> Si no configuras `VITE_GOOGLE_SHEETS_SCRIPT_URL`, el formulario mostrará un error local y no enviará los datos.
 
 ## 📦 Scripts disponibles
 

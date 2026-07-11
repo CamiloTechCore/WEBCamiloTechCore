@@ -11,20 +11,22 @@ function ContactSection() {
   const [message, setMessage] = useState('');
   const [status, setStatus] = useState('idle');
 
-  const scriptUrl =
-    import.meta.env.VITE_GOOGLE_SHEETS_SCRIPT_URL ||
-    'https://script.google.com/macros/s/AKfycbwvMsVELe8qOYAj9xxe-JRThE74wuqoJZ6ZBEdB_UkMKFWJ2iRYqvVunZsR32TCgDw6Fw/exec';
+  const scriptUrl = import.meta.env.VITE_GOOGLE_SHEETS_SCRIPT_URL;
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     setStatus('sending');
 
     try {
+      if (!scriptUrl) {
+        throw new Error('Falta VITE_GOOGLE_SHEETS_SCRIPT_URL en el archivo de entorno');
+      }
+
       const response = await fetch(scriptUrl, {
         method: 'POST',
-        mode: 'no-cors',
         headers: {
           'Content-Type': 'application/json',
+          Accept: 'application/json',
         },
         body: JSON.stringify({
           name,
