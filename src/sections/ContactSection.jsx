@@ -23,6 +23,14 @@ function ContactSection() {
         throw new Error('Falta VITE_GOOGLE_SHEETS_SCRIPT_URL en el archivo de entorno');
       }
 
+      if (scriptUrl.includes('docs.google.com/spreadsheets')) {
+        throw new Error('La variable VITE_GOOGLE_SHEETS_SCRIPT_URL no debe ser la URL de la hoja de cálculo. Usa la URL desplegada de Apps Script.');
+      }
+
+      if (!scriptUrl.includes('script.google.com/macros/s/') || !scriptUrl.endsWith('/exec')) {
+        throw new Error('La URL especificada en VITE_GOOGLE_SHEETS_SCRIPT_URL no tiene el formato correcto de Apps Script.');
+      }
+
       const response = await fetch(scriptUrl, {
         method: 'POST',
         headers: {
