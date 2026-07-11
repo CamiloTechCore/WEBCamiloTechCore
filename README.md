@@ -38,6 +38,8 @@ VITE_GOOGLE_SHEETS_SCRIPT_URL=https://script.google.com/macros/s/YOUR_SCRIPT_ID/
 
 > **⚠️ Importante**: `.env` debe estar en `.gitignore` para que no se suba al repositorio.
 
+> **Nota**: la app usa `mode: 'no-cors'` cuando envía el formulario a Apps Script, porque la URL del script no devuelve los encabezados CORS completos para navegadores.
+
 ### Ejemplo de Apps Script
 
 ```javascript

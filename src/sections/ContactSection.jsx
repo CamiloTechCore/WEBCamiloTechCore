@@ -33,10 +33,7 @@ function ContactSection() {
 
       const response = await fetch(scriptUrl, {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
-        },
+        mode: 'no-cors',
         body: JSON.stringify({
           name,
           email,
@@ -44,7 +41,7 @@ function ContactSection() {
         }),
       });
 
-      if (response && response.ok === false) {
+      if (response.type !== 'opaque' && response.ok === false) {
         throw new Error(`API error: ${response.statusText}`);
       }
 
