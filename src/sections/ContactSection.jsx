@@ -11,34 +11,29 @@ function ContactSection() {
   const [message, setMessage] = useState('');
   const [status, setStatus] = useState('idle');
 
-  const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
-  const supabaseKey = import.meta.env.VITE_SUPABASE_KEY;
+  const scriptUrl =
+    import.meta.env.VITE_GOOGLE_SHEETS_SCRIPT_URL ||
+    'https://script.google.com/macros/s/AKfycbwvMsVELe8qOYAj9xxe-JRThE74wuqoJZ6ZBEdB_UkMKFWJ2iRYqvVunZsR32TCgDw6Fw/exec';
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     setStatus('sending');
 
     try {
-      if (!supabaseUrl || !supabaseKey) {
-        throw new Error('Supabase credentials missing');
-      }
-
-      const endpoint = `${supabaseUrl.replace(/\/+$/, '')}/rest/v1/scr_contact_portafolio`;
-      const response = await fetch(endpoint, {
+      const response = await fetch(scriptUrl, {
         method: 'POST',
+        mode: 'no-cors',
         headers: {
           'Content-Type': 'application/json',
-          'apikey': supabaseKey,
-          'Authorization': `Bearer ${supabaseKey}`,
         },
         body: JSON.stringify({
-          name: name,
-          email_contact: email,
-          comments_menssaje: message,
+          name,
+          email,
+          message,
         }),
       });
 
-      if (!response.ok) {
+      if (response && response.ok === false) {
         throw new Error(`API error: ${response.statusText}`);
       }
 
