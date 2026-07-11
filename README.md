@@ -29,7 +29,7 @@ npm install
 1. Crea un Google Spreadsheet y nómbralo como quieras.
 2. Crea una hoja llamada `BD`.
 3. Despliega un Google Apps Script que acepte `POST` y escriba los datos en la hoja `BD`.
-4. Copia el URL del script desplegado como app web.
+4. Copia la URL del script desplegado como app web.
 5. Crea un archivo `.env` en la raíz del proyecto con esta variable:
 
 ```env
@@ -37,6 +37,19 @@ VITE_GOOGLE_SHEETS_SCRIPT_URL=https://script.google.com/macros/s/YOUR_SCRIPT_ID/
 ```
 
 > **⚠️ Importante**: `.env` debe estar en `.gitignore` para que no se suba al repositorio.
+
+### Ejemplo de Apps Script
+
+```javascript
+function doPost(e) {
+  const sheet = SpreadsheetApp.openById('1FZYcM4kIaJeSZuO2atQSicPC5GrUd8JfhB6A_ZG94-o').getSheetByName('BD');
+  const payload = JSON.parse(e.postData.contents);
+  sheet.appendRow([new Date(), payload.name, payload.email, payload.message]);
+  return ContentService.createTextOutput(JSON.stringify({ success: true })).setMimeType(ContentService.MimeType.JSON);
+}
+```
+
+> Reinicia el servidor de Vite después de editar `.env` para que la variable se cargue correctamente.
 
 ## 🚀 Ejecutar en desarrollo
 

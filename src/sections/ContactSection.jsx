@@ -10,6 +10,7 @@ function ContactSection() {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
   const [status, setStatus] = useState('idle');
+  const [errorMessage, setErrorMessage] = useState('');
 
   const scriptUrl = import.meta.env.VITE_GOOGLE_SHEETS_SCRIPT_URL;
 
@@ -40,12 +41,15 @@ function ContactSection() {
       }
 
       setStatus('success');
+      setErrorMessage('');
       setName('');
       setEmail('');
       setMessage('');
 
     } catch (error) {
+      const message = error instanceof Error ? error.message : 'Error al enviar el formulario';
       console.error('Error al enviar el formulario:', error);
+      setErrorMessage(message);
       setStatus('error');
     }
   };
@@ -112,7 +116,11 @@ function ContactSection() {
         </form>
 
         {status === 'success' && <p className="text-center text-green-500 mt-4">{t('contact.p8')}</p>}
-        {status === 'error' && <p className="text-center text-red-500 mt-4">{t('contact.p9')}</p>}
+        {status === 'error' && (
+          <p className="text-center text-red-500 mt-4">
+            {errorMessage || t('contact.p9')}
+          </p>
+        )}
       </div>
       </div>
     </section>

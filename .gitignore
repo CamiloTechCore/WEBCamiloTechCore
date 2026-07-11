@@ -9,7 +9,7 @@ yarn-debug.log*
 yarn-error.log*
 
 # Archivos de entorno (muy importante para la seguridad)
-
+.env
 
 # Archivos del sistema operativo y del editor
 .DS_Store
