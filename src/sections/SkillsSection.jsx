@@ -123,23 +123,23 @@ function SkillsSection() {
   const { t } = useTranslation();
 
   return (
-    <section id="skills" className="py-24 bg-transparent relative overflow-hidden">
+    <section id="skills" className="py-8 md:py-12 min-h-[calc(100vh-5rem)] flex flex-col justify-center bg-transparent relative overflow-hidden scroll-mt-20">
       {/* Gráfica de fondo suave con línea de tendencia */}
       <BackgroundChart />
       
       <div className="container mx-auto px-4 relative z-10 max-w-6xl">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-900 dark:text-white tracking-tight">
+        <div className="text-center mb-6 md:mb-8">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white tracking-tight">
             {t('skills.title')}
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-green-500 to-blue-500 mx-auto mt-4 rounded-full"></div>
-          <p className="text-gray-600 dark:text-gray-400 mt-4 max-w-2xl mx-auto text-base sm:text-lg">
+          <div className="w-16 h-1 bg-gradient-to-r from-green-500 to-blue-500 mx-auto mt-2.5 rounded-full"></div>
+          <p className="text-gray-600 dark:text-gray-400 mt-2 max-w-2xl mx-auto text-xs sm:text-sm">
             Stack tecnológico enfocado en análisis cuantitativo, automatización de flujos de trabajo y desarrollo frontend reactivo.
           </p>
         </div>
         
         {/* Mosaico de 4 columnas en pantallas medianas/grandes (Grid 4xN) con vidrio líquido */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5 sm:gap-6 max-w-5xl mx-auto">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 max-w-5xl mx-auto">
           {technologies.map((tech) => (
             <TechnologyCard key={tech.name} name={tech.name} Icon={tech.Icon} styling={tech.styling} />
           ))}

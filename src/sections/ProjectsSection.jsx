@@ -52,31 +52,31 @@ function ProjectsSection() {
   const { t } = useTranslation();
 
   return (
-    <section id="projects" className="py-24 bg-transparent relative overflow-hidden">
+    <section id="projects" className="py-8 md:py-12 min-h-[calc(100vh-5rem)] flex flex-col justify-center bg-transparent relative overflow-hidden scroll-mt-20">
       <div className="container mx-auto px-4 max-w-7xl relative z-10">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-900 dark:text-white tracking-tight">
+        <div className="text-center mb-6 md:mb-8">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white tracking-tight">
             {t('header.projects')}
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-green-500 to-blue-500 mx-auto mt-4 rounded-full"></div>
+          <div className="w-16 h-1 bg-gradient-to-r from-green-500 to-blue-500 mx-auto mt-2.5 rounded-full"></div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 mb-10">
           {projects.map(project => (
             <ProjectCard key={project.id} project={project} />
           ))}
         </div>
 
-        <div className="mt-16 text-center">
-          <h3 className="text-2xl sm:text-3xl font-bold text-center mb-8 text-gray-900 dark:text-white">
+        <div className="text-center">
+          <h3 className="text-xl sm:text-2xl font-bold text-center mb-4 text-gray-900 dark:text-white">
             Ecosistema de Tecnologías en Proyectos
           </h3>
-          <div className="w-full max-w-3xl mx-auto flex justify-center items-center overflow-hidden p-6 rounded-3xl bg-white/50 dark:bg-gray-900/50 backdrop-blur-xl border border-white/60 dark:border-white/10 shadow-[0_8px_32px_0_rgba(31,38,135,0.06)] dark:shadow-[0_8px_32px_0_rgba(0,0,0,0.37)]">
+          <div className="w-full max-w-3xl mx-auto flex justify-center items-center overflow-hidden p-4 rounded-3xl bg-white/50 dark:bg-gray-900/50 backdrop-blur-xl border border-white/60 dark:border-white/10 shadow-[0_8px_32px_0_rgba(31,38,135,0.06)] dark:shadow-[0_8px_32px_0_rgba(0,0,0,0.37)]">
             {isClient && (
               <Wordcloud
                 words={words}
                 width={cloudWidth}
-                height={260}
+                height={200}
                 fontSize={(datum) => fontScale(datum.value)}
                 font={'system-ui, sans-serif'}
                 padding={3}

@@ -34,7 +34,7 @@ const Header = ({ theme, toggleTheme }) => {
     setTimeout(() => {
       scroller.scrollTo(targetId, {
         smooth: true,
-        offset: -80,
+        offset: -85,
         duration: 500,
       });
     }, 100);
@@ -50,44 +50,64 @@ const Header = ({ theme, toggleTheme }) => {
     }
   };
 
+  const navBtnClasses = `
+    inline-flex items-center justify-center px-3.5 py-1.5 rounded-xl text-sm font-semibold
+    text-gray-700 dark:text-gray-200
+    bg-white/40 dark:bg-gray-800/40 backdrop-blur-md
+    border border-gray-200/60 dark:border-white/10
+    shadow-[0_2px_8px_rgba(0,0,0,0.04)] dark:shadow-[0_2px_8px_rgba(0,0,0,0.2)]
+    hover:border-blue-500/50 hover:text-blue-600 dark:hover:text-blue-400
+    hover:shadow-sm hover:bg-white/80 dark:hover:bg-gray-800/80
+    active:scale-95 active:shadow-inner active:translate-y-0.5
+    transition-all duration-150 cursor-pointer select-none
+  `;
+
   return (
     <>
       <header className="bg-white/60 dark:bg-gray-900/60 backdrop-blur-xl sticky top-0 z-50 shadow-[0_4px_20px_0_rgba(31,38,135,0.04)] border-b border-white/50 dark:border-white/10 transition-colors">
         <nav className="container mx-auto flex justify-between items-center h-20 px-4">
           
-          <div className="text-xl font-bold text-gray-800 dark:text-white">
+          <div className="text-xl font-bold text-gray-800 dark:text-white mr-4">
             <a href="/" onClick={handleLogoClick} className="cursor-pointer tracking-tight">
               CamiloTechCore
             </a>
           </div>
 
           <div className="hidden md:block">
-            <ul className="flex items-center space-x-7 text-gray-600 dark:text-gray-300 font-medium">
+            <ul className="flex items-center space-x-2 lg:space-x-3 text-gray-600 dark:text-gray-300 font-medium">
               <li>
                 <button
                   onClick={() => navigateToSection('/aboutme', 'about')}
-                  className="cursor-pointer hover:text-blue-500 transition-colors duration-300 bg-transparent border-0 text-inherit p-0 font-inherit"
+                  className={navBtnClasses}
                 >
                   {t('header.about')}
                 </button>
               </li>
               <li>
                 <button
+                  onClick={() => navigateToSection('/skills', 'skills')}
+                  className={navBtnClasses}
+                >
+                  {t('header.skills')}
+                </button>
+              </li>
+              <li>
+                <button
                   onClick={() => navigateToSection('/projects', 'projects')}
-                  className="cursor-pointer hover:text-blue-500 transition-colors duration-300 bg-transparent border-0 text-inherit p-0 font-inherit"
+                  className={navBtnClasses}
                 >
                   {t('header.projects')}
                 </button>
               </li>
               <li>
-                <RouterLink to="/blog" className="cursor-pointer hover:text-blue-500 transition-colors duration-300">
+                <RouterLink to="/blog" className={navBtnClasses}>
                   {t('header.blog')}
                 </RouterLink>
               </li>
               <li>
                 <button
                   onClick={() => navigateToSection('/contact', 'contact')}
-                  className="cursor-pointer hover:text-blue-500 transition-colors duration-300 bg-transparent border-0 text-inherit p-0 font-inherit"
+                  className={navBtnClasses}
                 >
                   {t('header.contact')}
                 </button>

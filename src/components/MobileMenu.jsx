@@ -21,7 +21,7 @@ function MobileMenu({ closeMenu, theme, toggleTheme }) {
     setTimeout(() => {
       scroller.scrollTo(targetId, {
         smooth: true,
-        offset: -80,
+        offset: -85,
         duration: 500,
       });
     }, 150);
@@ -48,6 +48,14 @@ function MobileMenu({ closeMenu, theme, toggleTheme }) {
             className="cursor-pointer hover:text-blue-500 transition-colors bg-transparent border-0 text-inherit p-0 font-inherit"
           >
             {t('header.about')}
+          </button>
+        </li>
+        <li>
+          <button
+            onClick={() => handleNavClick('/skills', 'skills')}
+            className="cursor-pointer hover:text-blue-500 transition-colors bg-transparent border-0 text-inherit p-0 font-inherit"
+          >
+            {t('header.skills')}
           </button>
         </li>
         <li>

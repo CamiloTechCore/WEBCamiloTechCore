@@ -36,7 +36,7 @@ function HeroSection() {
   });
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center text-center bg-transparent relative overflow-hidden py-20">
+    <section id="home" className="min-h-[calc(100vh-5rem)] flex items-center justify-center text-center bg-transparent relative overflow-hidden py-16 scroll-mt-24">
       <div className="container mx-auto px-4 max-w-5xl relative z-10">
         <motion.div
           variants={containerVariants}

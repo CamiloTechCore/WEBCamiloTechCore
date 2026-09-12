@@ -58,28 +58,28 @@ function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-24 bg-transparent relative overflow-hidden">
-      <div className="container mx-auto px-4 max-w-2xl relative z-10">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-900 dark:text-white tracking-tight mb-4">
+    <section id="contact" className="py-8 md:py-12 min-h-[calc(100vh-5rem)] flex flex-col justify-center bg-transparent relative overflow-hidden scroll-mt-20">
+      <div className="container mx-auto px-4 max-w-xl relative z-10">
+        <div className="text-center mb-6 md:mb-8">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white tracking-tight mb-2">
             {t('contact.p1')}
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-green-500 to-blue-500 mx-auto mb-6 rounded-full"></div>
-          <p className="text-gray-600 dark:text-gray-300 text-base sm:text-lg">
+          <div className="w-16 h-1 bg-gradient-to-r from-green-500 to-blue-500 mx-auto mb-3 rounded-full"></div>
+          <p className="text-gray-600 dark:text-gray-300 text-xs sm:text-sm">
             {t('contact.p2')}
           </p>
         </div>
 
-        <div className="p-8 sm:p-10 rounded-3xl bg-white/50 dark:bg-gray-900/50 backdrop-blur-xl border border-white/60 dark:border-white/10 shadow-[0_8px_32px_0_rgba(31,38,135,0.06)] dark:shadow-[0_8px_32px_0_rgba(0,0,0,0.37)]">
-          <form onSubmit={handleSubmit} className="space-y-6">
+        <div className="p-6 sm:p-8 rounded-3xl bg-white/50 dark:bg-gray-900/50 backdrop-blur-xl border border-white/60 dark:border-white/10 shadow-[0_8px_32px_0_rgba(31,38,135,0.06)] dark:shadow-[0_8px_32px_0_rgba(0,0,0,0.37)]">
+          <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <label htmlFor="name" className="block mb-2 text-sm font-semibold text-gray-700 dark:text-gray-300">
+              <label htmlFor="name" className="block mb-1.5 text-xs font-semibold text-gray-700 dark:text-gray-300">
                 {t('contact.p3')}
               </label>
               <input
                 type="text"
                 id="name"
-                className="bg-white/70 border border-gray-200/80 text-gray-900 text-base rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 block w-full p-3.5 dark:bg-gray-800/60 dark:border-gray-700/60 dark:placeholder-gray-400 dark:text-white transition-all backdrop-blur-sm"
+                className="bg-white/70 border border-gray-200/80 text-gray-900 text-sm rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 sm:p-3 dark:bg-gray-800/60 dark:border-gray-700/60 dark:placeholder-gray-400 dark:text-white transition-all backdrop-blur-sm"
                 placeholder={t('contact.p3')}
                 required
                 value={name}
@@ -88,13 +88,13 @@ function ContactSection() {
             </div>
 
             <div>
-              <label htmlFor="email" className="block mb-2 text-sm font-semibold text-gray-700 dark:text-gray-300">
+              <label htmlFor="email" className="block mb-1.5 text-xs font-semibold text-gray-700 dark:text-gray-300">
                 {t('contact.p4')}
               </label>
               <input
                 type="email"
                 id="email"
-                className="bg-white/70 border border-gray-200/80 text-gray-900 text-base rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 block w-full p-3.5 dark:bg-gray-800/60 dark:border-gray-700/60 dark:placeholder-gray-400 dark:text-white transition-all backdrop-blur-sm"
+                className="bg-white/70 border border-gray-200/80 text-gray-900 text-sm rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 sm:p-3 dark:bg-gray-800/60 dark:border-gray-700/60 dark:placeholder-gray-400 dark:text-white transition-all backdrop-blur-sm"
                 placeholder={t('contact.p11')}
                 required
                 value={email}
@@ -103,13 +103,13 @@ function ContactSection() {
             </div>
 
             <div>
-              <label htmlFor="message" className="block mb-2 text-sm font-semibold text-gray-700 dark:text-gray-300">
+              <label htmlFor="message" className="block mb-1.5 text-xs font-semibold text-gray-700 dark:text-gray-300">
                 {t('contact.p5')}
               </label>
               <textarea
                 id="message"
-                rows="5"
-                className="bg-white/70 border border-gray-200/80 text-gray-900 text-base rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 block w-full p-3.5 dark:bg-gray-800/60 dark:border-gray-700/60 dark:placeholder-gray-400 dark:text-white transition-all backdrop-blur-sm"
+                rows="3"
+                className="bg-white/70 border border-gray-200/80 text-gray-900 text-sm rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 sm:p-3 dark:bg-gray-800/60 dark:border-gray-700/60 dark:placeholder-gray-400 dark:text-white transition-all backdrop-blur-sm"
                 placeholder={t('contact.p10')}
                 required
                 value={message}
@@ -117,10 +117,10 @@ function ContactSection() {
               ></textarea>
             </div>
             
-            <div className="text-center pt-2">
+            <div className="text-center pt-1">
               <button
                 type="submit"
-                className="w-full sm:w-auto text-white bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 focus:ring-4 focus:ring-blue-300 font-semibold rounded-2xl text-base px-8 py-3.5 text-center inline-flex items-center justify-center gap-2.5 transition-all shadow-md hover:shadow-xl hover:scale-[1.02] disabled:opacity-60 disabled:cursor-not-allowed cursor-pointer"
+                className="w-full sm:w-auto text-white bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 focus:ring-4 focus:ring-blue-300 font-semibold rounded-xl text-sm px-7 py-3 text-center inline-flex items-center justify-center gap-2 transition-all shadow-md hover:shadow-xl hover:scale-[1.02] disabled:opacity-60 disabled:cursor-not-allowed cursor-pointer"
                 disabled={status === 'sending'}
               >
                 <span>{status === 'sending' ? t('contact.p7') : t('contact.p6')}</span>
@@ -130,15 +130,15 @@ function ContactSection() {
           </form>
 
           {status === 'success' && (
-            <div className="mt-6 p-4 rounded-2xl bg-emerald-500/10 dark:bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center gap-2 text-emerald-700 dark:text-emerald-300 font-medium backdrop-blur-md">
-              <FiCheckCircle size={20} />
+            <div className="mt-4 p-3 rounded-xl bg-emerald-500/10 dark:bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center gap-2 text-emerald-700 dark:text-emerald-300 text-xs sm:text-sm font-medium backdrop-blur-md">
+              <FiCheckCircle size={18} />
               <span>{t('contact.p8')}</span>
             </div>
           )}
 
           {status === 'error' && (
-            <div className="mt-6 p-4 rounded-2xl bg-rose-500/10 dark:bg-rose-500/10 border border-rose-500/30 flex items-center justify-center gap-2 text-rose-700 dark:text-rose-300 font-medium backdrop-blur-md">
-              <FiAlertCircle size={20} />
+            <div className="mt-4 p-3 rounded-xl bg-rose-500/10 dark:bg-rose-500/10 border border-rose-500/30 flex items-center justify-center gap-2 text-rose-700 dark:text-rose-300 text-xs sm:text-sm font-medium backdrop-blur-md">
+              <FiAlertCircle size={18} />
               <span>{errorMessage || t('contact.p9')}</span>
             </div>
           )}

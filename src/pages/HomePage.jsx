@@ -25,7 +25,7 @@ function HomePage() {
       setTimeout(() => {
         scroller.scrollTo(validSections[path], {
           smooth: true,
-          offset: -80,
+          offset: -85,
           duration: 500,
         });
       }, 100);
