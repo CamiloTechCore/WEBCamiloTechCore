@@ -13,8 +13,6 @@ export const projects = [
     imageUrl: project1Img,
     tags: ['React', 'Tailwind CSS', 'Vite', 'Framer Motion', 'Data Viz'],
     links: {
-      github: 'https://github.com/CamiloTechCore/CamiloTechCore',
-      live: 'https://camilotechcore.vercel.app/',
     },
   }, // <--- AQUÍ: Se añadió la llave de cierre y la coma
   {
@@ -35,8 +33,6 @@ export const projects = [
     tags: ['React 18 & Vite', 'Axios', 'Recharts', 'Javascript', 'HTML', 'jsPDF & AutoTable', 'Node' , 'Supabase', 'Bcrypt', 'Helmet & CORS'],
     links: {
       github: 'https://github.com/CamiloTechCore/ProfesionalPF/tree/main/ProfesionalPF',
-      live: 'https://profesional-pf-git-main-camilotechcores-projects.vercel.app/'
-
     },
   }
 ];

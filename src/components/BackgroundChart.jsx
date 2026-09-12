@@ -3,68 +3,142 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
-// ... (Los componentes LineChartSVG y BarChartSVG no necesitan cambios)
-const LineChartSVG = () => (
-  <motion.path
-    initial={{ pathLength: 0 }}
-    animate={{ pathLength: 1 }}
-    transition={{ duration: 2, ease: "easeInOut" }}
-    d="M 10 150 Q 100 50, 200 120 T 400 100 T 600 160"
-    stroke="currentColor"
-    strokeWidth="8"
-    fill="none"
-    strokeLinecap="round"
-  />
-);
+// Gráfica de fondo moderna con barras fluidas, degradados y línea de tendencia Bezier suave (Spline)
+const ModernChartSVG = () => {
+  // Coordenadas de las barras (x, y_top, altura, delay)
+  const bars = [
+    { x: 30, y: 170, h: 40, d: 0.05 },
+    { x: 90, y: 145, h: 65, d: 0.1 },
+    { x: 150, y: 125, h: 85, d: 0.15 },
+    { x: 210, y: 135, h: 75, d: 0.2 },
+    { x: 270, y: 100, h: 110, d: 0.25 },
+    { x: 330, y: 75, h: 135, d: 0.3 },
+    { x: 390, y: 85, h: 125, d: 0.35 },
+    { x: 450, y: 55, h: 155, d: 0.4 },
+    { x: 510, y: 45, h: 165, d: 0.45 },
+    { x: 570, y: 25, h: 185, d: 0.5 },
+    { x: 630, y: 35, h: 175, d: 0.55 },
+    { x: 690, y: 18, h: 192, d: 0.6 },
+  ];
 
-const BarChartSVG = () => (
-  <>
-    {/* Barra 1 */}
-    <motion.path initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ delay: 0.1, duration: 1.5, ease: "easeOut" }} d="M 50 180 V 180" stroke="currentColor" strokeWidth="25" fill="none" strokeLinecap="round" />
-    {/* Barra 2 */}
-    <motion.path initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ delay: 0.2, duration: 1.5, ease: "easeOut" }} d="M 80 180 V 160" stroke="currentColor" strokeWidth="25" fill="none" strokeLinecap="round" />
-    {/* Barra 3 */}
-    <motion.path initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ delay: 0.3, duration: 1.5, ease: "easeOut" }} d="M 170 180 V 120" stroke="currentColor" strokeWidth="25" fill="none" strokeLinecap="round" />
-    {/* Barra 4 */}
-    <motion.path initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ delay: 0.4, duration: 1.5, ease: "easeOut" }} d="M 200 180 V 100" stroke="currentColor" strokeWidth="25" fill="none" strokeLinecap="round" />
-    {/* --- BARRAS NUEVAS --- */}
-    {/* Barra 5 */}
-    <motion.path initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ delay: 0.5, duration: 1.5, ease: "easeOut" }} d="M 290 180 V 80" stroke="currentColor" strokeWidth="25" fill="none" strokeLinecap="round" />
-    {/* Barra 6 */}
-    <motion.path initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ delay: 0.6, duration: 1.5, ease: "easeOut" }} d="M 320 180 V 30" stroke="currentColor" strokeWidth="25" fill="none" strokeLinecap="round" />
-    {/* Barra 7 */}
-    <motion.path initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ delay: 0.7, duration: 1.5, ease: "easeOut" }} d="M 410 180 V 60" stroke="currentColor" strokeWidth="25" fill="none" strokeLinecap="round" />
-    {/* Barra 8 */}
-    <motion.path initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ delay: 0.8, duration: 1.5, ease: "easeOut" }} d="M 440 180 V 40" stroke="currentColor" strokeWidth="25" fill="none" strokeLinecap="round" />
-    {/* Barra 9 */}
-    <motion.path initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ delay: 0.9, duration: 1.5, ease: "easeOut" }} d="M 530 180 V 20" stroke="currentColor" strokeWidth="25" fill="none" strokeLinecap="round" />
-    {/* --- ✅ LÍNEA TIPO PARETO AÑADIDA --- */}
-    <motion.path
-      initial={{ pathLength: 0, opacity: 0 }}
-      animate={{ pathLength: 1, opacity: 1 }}
-      // La animación de la línea empieza después de que las barras comiencen a dibujarse
-      transition={{ delay: 1.2, duration: 2, ease: "easeInOut" }}
-      // Las coordenadas 'd' conectan las puntas de las 9 barras
-      d="M 50 80 L 110 120 L 170 50 L 230 150 L 290 100 L 350 30 L 410 130 L 470 90 L 530 60"
-      stroke="#9BD2E8"
-      strokeWidth="5" // Hacemos la línea más delgada que las barras
-      fill="none"
-      strokeLinecap="round"
-    />
-  </>
-);
+  // Curva de tendencia ultra suave usando curvas de Bézier cúbicas (C)
+  const smoothTrendPath = "M 30,170 C 90,145 150,130 210,135 C 270,140 300,80 360,78 C 420,76 470,50 530,42 C 590,34 640,30 700,16";
+  const smoothAreaPath = `${smoothTrendPath} L 700,210 L 30,210 Z`;
 
+  return (
+    <>
+      <defs>
+        {/* Degradado para las barras */}
+        <linearGradient id="barGradient" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="#3B82F6" stopOpacity="0.4" />
+          <stop offset="100%" stopColor="#10B981" stopOpacity="0.05" />
+        </linearGradient>
 
-function BackgroundChart({ type }) {
+        {/* Degradado para la línea de tendencia suave */}
+        <linearGradient id="trendGradient" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stopColor="#10B981" stopOpacity="0.9" />
+          <stop offset="50%" stopColor="#3B82F6" stopOpacity="0.9" />
+          <stop offset="100%" stopColor="#8B5CF6" stopOpacity="0.9" />
+        </linearGradient>
+
+        {/* Degradado del área sombreada bajo la curva */}
+        <linearGradient id="areaGradient" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="#3B82F6" stopOpacity="0.15" />
+          <stop offset="100%" stopColor="#3B82F6" stopOpacity="0.0" />
+        </linearGradient>
+
+        {/* Filtro de resplandor suave */}
+        <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+          <feGaussianBlur stdDeviation="3" result="blur" />
+          <feMerge>
+            <feMergeNode in="blur" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+      </defs>
+
+      {/* Líneas de cuadrícula horizontal sutiles */}
+      <line x1="20" y1="50" x2="710" y2="50" stroke="currentColor" strokeOpacity="0.06" strokeDasharray="6 6" />
+      <line x1="20" y1="100" x2="710" y2="100" stroke="currentColor" strokeOpacity="0.06" strokeDasharray="6 6" />
+      <line x1="20" y1="150" x2="710" y2="150" stroke="currentColor" strokeOpacity="0.06" strokeDasharray="6 6" />
+
+      {/* Barras animadas con bordes redondeados */}
+      {bars.map((b, i) => (
+        <motion.rect
+          key={i}
+          x={b.x - 12}
+          y={b.y}
+          width="24"
+          height={b.h}
+          rx="6"
+          fill="url(#barGradient)"
+          initial={{ scaleY: 0, opacity: 0 }}
+          animate={{ scaleY: 1, opacity: 1 }}
+          transition={{
+            delay: b.d,
+            duration: 1.2,
+            ease: [0.16, 1, 0.3, 1],
+          }}
+          style={{ transformOrigin: `center 210px` }}
+        />
+      ))}
+
+      {/* Área sombreada bajo la curva suave */}
+      <motion.path
+        d={smoothAreaPath}
+        fill="url(#areaGradient)"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.8, duration: 1.5 }}
+      />
+
+      {/* Línea de tendencia suave y fluida */}
+      <motion.path
+        d={smoothTrendPath}
+        fill="none"
+        stroke="url(#trendGradient)"
+        strokeWidth="4"
+        strokeLinecap="round"
+        filter="url(#glow)"
+        initial={{ pathLength: 0, opacity: 0 }}
+        animate={{ pathLength: 1, opacity: 1 }}
+        transition={{ delay: 0.4, duration: 2.2, ease: "easeInOut" }}
+      />
+
+      {/* Puntos destacados en la línea de tendencia */}
+      {[
+        { cx: 30, cy: 170, d: 0.6 },
+        { cx: 210, cy: 135, d: 1.0 },
+        { cx: 360, cy: 78, d: 1.4 },
+        { cx: 530, cy: 42, d: 1.8 },
+        { cx: 700, cy: 16, d: 2.2 },
+      ].map((pt, idx) => (
+        <motion.circle
+          key={idx}
+          cx={pt.cx}
+          cy={pt.cy}
+          r="4.5"
+          fill="#FFFFFF"
+          stroke="#3B82F6"
+          strokeWidth="3"
+          initial={{ scale: 0, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ delay: pt.d, duration: 0.4 }}
+        />
+      ))}
+    </>
+  );
+};
+
+function BackgroundChart() {
   const { ref, inView } = useInView({
     triggerOnce: true,
-    threshold: 0.3,
+    threshold: 0.2,
   });
-  
-  // La opacidad ahora la controlaremos directamente con las clases de color
+
   const variants = {
     hidden: { opacity: 0 },
-    visible: { opacity: 0.2, transition: { duration: 1, delay: 0.5 } },
+    visible: { opacity: 1, transition: { duration: 1.2 } },
   };
 
   return (
@@ -73,18 +147,14 @@ function BackgroundChart({ type }) {
       variants={variants}
       initial="hidden"
       animate={inView ? "visible" : "hidden"}
-      // ✅ 2. COLOR Y OPACIDAD ADAPTABLES: Usamos colores distintos para cada tema
-      // 'text-primary/10' = color primario con 10% de opacidad
-      // 'dark:text-white/5' = color blanco con 5% de opacidad en modo oscuro
-      className="absolute inset-0 z-0 text-secondary dark:text-white/5 pointer-events-none flex justify-center items-center"
+      className="absolute inset-0 z-0 pointer-events-none flex justify-center items-center overflow-hidden opacity-30 dark:opacity-20"
     >
-      <svg 
-        viewBox="0 0 600 200" 
-        // ✅ 3. TAMAÑO AJUSTADO: Hacemos que ocupe todo el ancho para un mayor impacto
-        className="w-full h-full"
+      <svg
+        viewBox="0 0 730 220"
+        className="w-full h-full max-h-[500px]"
         preserveAspectRatio="xMidYMid meet"
       >
-        {inView && (type === 'line' ? <LineChartSVG /> : <BarChartSVG />)}
+        {inView && <ModernChartSVG />}
       </svg>
     </motion.div>
   );

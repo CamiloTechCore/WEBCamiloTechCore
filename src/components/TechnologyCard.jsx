@@ -1,29 +1,35 @@
 // src/components/TechnologyCard.jsx
 
 function TechnologyCard({ name, Icon, styling }) {
-  // Construimos las clases de la tarjeta dinámicamente a partir de la prop 'styling'
   const cardClasses = `
-    flex items-center gap-4 rounded-lg p-4 transition-all duration-300
-    hover:-translate-y-1
-    ${styling.gradient ? styling.gradient : (styling.bgColor || 'bg-gray-100 dark:bg-gray-800')}
-    ${styling.borderColor ? `border-l-4 ${styling.borderColor}` : 'border-l-4 border-transparent'}
+    group relative flex flex-col items-center justify-center p-6 rounded-3xl transition-all duration-300
+    bg-white/50 dark:bg-gray-900/50 backdrop-blur-xl
+    border border-white/60 dark:border-white/10
+    shadow-[0_4px_20px_0_rgba(31,38,135,0.05)] dark:shadow-[0_4px_20px_0_rgba(0,0,0,0.3)]
+    hover:shadow-[0_12px_32px_0_rgba(31,38,135,0.12)] dark:hover:shadow-[0_12px_32px_0_rgba(0,0,0,0.5)]
+    hover:-translate-y-2
+    ${styling.borderColor ? `hover:${styling.borderColor}` : 'hover:border-blue-400/80'}
   `;
 
-  // Construimos las clases para el icono
+  const iconContainerClasses = `
+    p-3.5 rounded-2xl mb-3.5 transition-transform duration-300 group-hover:scale-110 shadow-sm
+    ${styling.bgColor || 'bg-gray-100/80 dark:bg-gray-800/80'}
+  `;
+
   const iconClasses = `
-    h-8 w-8
+    h-10 w-10
     ${styling.iconColor || 'text-gray-700 dark:text-gray-300'}
   `;
-  
-  // Construimos las clases para el texto
+
   const textClasses = `
-    font-medium
-    ${styling.textColor || 'text-gray-800 dark:text-white'}
+    text-sm font-bold text-center text-gray-800 dark:text-gray-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors
   `;
 
   return (
     <div className={cardClasses}>
-      <Icon className={iconClasses} />
+      <div className={iconContainerClasses}>
+        <Icon className={iconClasses} />
+      </div>
       <span className={textClasses}>{name}</span>
     </div>
   );
