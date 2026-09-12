@@ -91,7 +91,7 @@ function AboutMeSection() {
           <p className="text-gray-600 dark:text-gray-300 leading-relaxed">{t('parragraps.tittle7')}</p>
           <br></br>
           <br></br>
-          <p className="text-gray-600 dark:text-gray-300 leading-relaxed"><strong>{t('hero.subtitle12')} </strong> {t('hero.subtitle12')}</p>
+          <p className="text-gray-600 dark:text-gray-300 leading-relaxed"><strong>{t('hero.subtitle12')} </strong></p>
           <br></br>
           <p className="text-gray-600 dark:text-gray-300 leading-relaxed">{t('parragraps.tittle8')}</p>
           </div>
