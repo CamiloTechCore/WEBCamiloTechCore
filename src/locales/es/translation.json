@@ -49,5 +49,37 @@
   "proyects":{
     "title":"Portafolio Personal",
     "description":"Mi portafolio personal construido con React, Vite y Tailwind CSS, demostrando mis habilidades en desarrollo front-end y visualización de datos."
+  },
+  "services": {
+    "heading": "Tecnología pensada para hacer crecer tu negocio",
+    "viewDetails": "Ver detalle",
+    "closeDetails": "Cerrar detalle del servicio",
+    "technologiesLabel": "Tecnologías y enfoque",
+    "items": {
+      "softwareConsulting": {
+        "title": "Consultoría de software",
+        "subtitle": "Elicitación de requisitos",
+        "description": "Analizo tu negocio y levantamos requisitos para comprobar que tu flujo de clientes está listo para crecer con un sistema que centralice la información y se adapte a tus procesos operativos, administrativos y de gestión.",
+        "technologies": ["React", "Node.js", "Modelado de procesos"]
+      },
+      "customDevelopment": {
+        "title": "Desarrollo de soluciones",
+        "subtitle": "Aplicaciones a medida",
+        "description": "Diseño e implemento aplicaciones web escalables que transforman procesos manuales en experiencias ágiles, claras y conectadas con las necesidades de tu operación.",
+        "technologies": ["React", "Node.js", "APIs REST"]
+      },
+      "growthAnalytics": {
+        "title": "Analítica para crecimiento",
+        "subtitle": "Datos que impulsan decisiones",
+        "description": "Creo reportes específicos para tu negocio, identificamos puntos de dolor y detectamos oportunidades de mejora para que puedas dar el siguiente salto con decisiones respaldadas por datos.",
+        "technologies": ["Power BI", "Python", "Librerías de análisis"]
+      },
+      "dataMesh": {
+        "title": "Implementación de Data Mesh",
+        "subtitle": "Red de datos conectada",
+        "description": "Convierto tus datos en productos de valor y organizo su operación para crear estrategias diferenciales. Es ideal para negocios con grandes data lakes que requieren orden, disponibilidad y una visión confiable de su información.",
+        "technologies": ["Data Mesh", "Data Lakes", "Productos de datos"]
+      }
+    }
   }
 }

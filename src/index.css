@@ -22,3 +22,32 @@ html, body, #root {
   padding: 0;
   box-sizing: border-box;
 }
+
+.services-carousel-mask {
+  overflow: hidden;
+  width: 100%;
+}
+
+.services-carousel-track {
+  display: flex;
+  gap: 1rem;
+  width: max-content;
+  padding: 0.5rem 1rem 0.75rem;
+  animation: services-scroll 32s linear infinite;
+}
+
+@keyframes services-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(calc(-50% - 0.5rem));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .services-carousel-track {
+    animation-play-state: paused;
+  }
+}

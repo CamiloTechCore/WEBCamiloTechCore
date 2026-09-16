@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { scroller } from 'react-scroll';
 import HeroSection from '../sections/HeroSection';
+import ServicesCarousel from '../components/ServicesCarousel';
 import AboutMeSection from '../sections/AboutMeSection';
 import SkillsSection from '../sections/SkillsSection';
 import ProjectsSection from '../sections/ProjectsSection';
@@ -37,6 +38,7 @@ function HomePage() {
   return (
     <>
       <HeroSection />
+      <ServicesCarousel />
       <AboutMeSection />
       <SkillsSection />
       <ProjectsSection />

@@ -1,7 +1,15 @@
 import { useState, useEffect } from 'react';
 import { Link as ScrollLink, scroller } from 'react-scroll';
 import { Link as RouterLink, useLocation, useNavigate } from 'react-router-dom';
-import { FiSun, FiMoon, FiMenu, FiX, FiGithub, FiLinkedin, FiInstagram } from 'react-icons/fi';
+import {
+  FiSun,
+  FiMoon,
+  FiMenu,
+  FiX,
+  FiGithub,
+  FiLinkedin,
+  FiInstagram,
+} from 'react-icons/fi';
 import { useTranslation } from 'react-i18next';
 import { AnimatePresence } from 'framer-motion';
 import MobileMenu from './MobileMenu';

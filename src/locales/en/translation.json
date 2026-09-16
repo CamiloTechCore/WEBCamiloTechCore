@@ -48,5 +48,37 @@
   "proyects":{
     "title":"Personal Portfolio",
     "description":"My personal portfolio built with React, Vite, and Tailwind CSS, showcasing my skills in front-end development and data visualization."
+  },
+  "services": {
+    "heading": "Technology designed to grow your business",
+    "viewDetails": "View details",
+    "closeDetails": "Close service details",
+    "technologiesLabel": "Technologies and approach",
+    "items": {
+      "softwareConsulting": {
+        "title": "Software consulting",
+        "subtitle": "Requirements elicitation",
+        "description": "I analyze your business and gather requirements to verify that your customer flow is ready to grow with a system that centralizes information and adapts to your operational, administrative, and management processes.",
+        "technologies": ["React", "Node.js", "Process modeling"]
+      },
+      "customDevelopment": {
+        "title": "Solution development",
+        "subtitle": "Custom applications",
+        "description": "I design and implement scalable web applications that turn manual processes into agile, clear experiences connected to your operational needs.",
+        "technologies": ["React", "Node.js", "REST APIs"]
+      },
+      "growthAnalytics": {
+        "title": "Analytics for growth",
+        "subtitle": "Data-driven decisions",
+        "description": "I create reports tailored to your business, identify pain points, and uncover opportunities for improvement so you can take the next step with data-backed decisions.",
+        "technologies": ["Power BI", "Python", "Analytics libraries"]
+      },
+      "dataMesh": {
+        "title": "Data Mesh implementation",
+        "subtitle": "Connected data network",
+        "description": "I turn your data into valuable products and organize its operation to create differentiated strategies. It is ideal for businesses with large data lakes that need order, availability, and a reliable view of their information.",
+        "technologies": ["Data Mesh", "Data Lakes", "Data products"]
+      }
+    }
   }
 }
