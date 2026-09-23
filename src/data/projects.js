@@ -3,7 +3,8 @@
 // Importa tus imágenes de proyecto
 import project1Img from '../assets/project1.png';
 import project2Img from '../assets/Project2.png';
-import project3Img from '../assets/Project3.png'
+import project3Img from '../assets/Project3.png';
+import project4Img from '../assets/Project4.png';
 //const { t } = useTranslation();
 export const projects = [
   {
@@ -33,6 +34,16 @@ export const projects = [
     tags: ['React 18 & Vite', 'Axios', 'Recharts', 'Javascript', 'HTML', 'jsPDF & AutoTable', 'Node' , 'Supabase', 'Bcrypt', 'Helmet & CORS'],
     links: {
       github: 'https://github.com/CamiloTechCore/ProfesionalPF/tree/main/ProfesionalPF',
+    },
+  },
+  {
+    id: 4,
+    title: 'FlowMapper',
+    description: 'FlowMapper es una herramienta avanzada para la visualización y análisis de flujos de datos, diseñada para ayudar a los usuarios a comprender patrones complejos y optimizar procesos mediante representaciones gráficas interactivas.',
+    imageUrl: project4Img,
+    tags: ['React 19 ', 'React Flow', 'Vite', 'Javascript', 'HTML', 'Google Apps Script', 'CSS'],
+    links: {
+      github: 'https://github.com/CamiloTechCore/FlowMapper',
     },
   }
 ];
