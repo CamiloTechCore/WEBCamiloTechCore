@@ -5,6 +5,7 @@ import project1Img from '../assets/project1.png';
 import project2Img from '../assets/Project2.png';
 import project3Img from '../assets/Project3.png';
 import project4Img from '../assets/Project4.png';
+import project5Img from '../assets/Project5.png';
 //const { t } = useTranslation();
 export const projects = [
   {
@@ -44,6 +45,16 @@ export const projects = [
     tags: ['React 19 ', 'React Flow', 'Vite', 'Javascript', 'HTML', 'Google Apps Script', 'CSS'],
     links: {
       github: 'https://github.com/CamiloTechCore/FlowMapper',
+    },
+  },
+  {
+    id: 5,
+    title: 'Drip',
+    description: '**Daily Records for Individuals & Partners**: registros diarios para tus finanzas personales y en conjunto, Comparte tus buenos habitos de gasto y manten la racha para mejorar tu ahorro.',
+    imageUrl: project5Img,
+    tags: ['React 19 ', 'React Flow', 'Vite', 'Javascript', 'HTML', 'Google Apps Script', 'CSS', 'typescript'],
+    links: {
+      github: 'https://github.com/CamiloTechCore/Drip',
     },
   }
 ];
