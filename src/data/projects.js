@@ -6,6 +6,7 @@ import project2Img from '../assets/Project2.png';
 import project3Img from '../assets/Project3.png';
 import project4Img from '../assets/Project4.png';
 import project5Img from '../assets/Project5.png';
+import project6Img from '../assets/Project6.png';
 //const { t } = useTranslation();
 export const projects = [
   {
@@ -55,6 +56,16 @@ export const projects = [
     tags: ['React 19 ', 'React Flow', 'Vite', 'Javascript', 'HTML', 'Google Apps Script', 'CSS', 'typescript'],
     links: {
       github: 'https://github.com/CamiloTechCore/Drip',
+    },
+  },
+  {
+    id: 6,
+    title: 'CRT SST gestion documental',
+    description: 'CRT SST gestion documental es una plataforma diseñada para la gestión eficiente de documentos relacionados con la seguridad y salud en el trabajo, facilitando el control y seguimiento de la documentación requerida.',
+    imageUrl: project6Img,
+    tags: ['React 19 ', 'React Flow', 'Vite', 'Javascript', 'HTML', 'Google Apps Script', 'CSS', 'typescript'],
+    links: {
+      github: 'https://github.com/CamiloTechCore/CRM_SST_Gestion',
     },
   }
 ];
