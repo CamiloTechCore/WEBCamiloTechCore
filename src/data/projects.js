@@ -53,7 +53,7 @@ export const projects = [
     title: 'Drip',
     description: '**Daily Records for Individuals & Partners**: registros diarios para tus finanzas personales y en conjunto, Comparte tus buenos habitos de gasto y manten la racha para mejorar tu ahorro.',
     imageUrl: project5Img,
-    tags: ['React 19 ', 'React Flow', 'Vite', 'Javascript', 'HTML', 'Google Apps Script', 'CSS', 'typescript'],
+    tags: ['React 18', 'TypeScript', 'Vite', 'Tailwind CSS', 'Framer Motion', 'TanStack Query', 'Recharts', 'date-fns','jsPDF','Lucide React','React Router','Content Service','Google Sheets','Google Apps Script'],
     links: {
       live: 'https://drip-inky.vercel.app/',
       github: 'https://github.com/CamiloTechCore/Drip',
@@ -64,7 +64,7 @@ export const projects = [
     title: 'CRM SST gestion documental',
     description: 'CRT SST gestion documental es una plataforma diseñada para la gestión eficiente de documentos relacionados con la seguridad y salud en el trabajo, facilitando el control y seguimiento de la documentación requerida.',
     imageUrl: project6Img,
-    tags: ['React 19 ', 'React Flow', 'Vite', 'Javascript', 'HTML', 'Google Apps Script', 'CSS', 'typescript'],
+    tags: ['React 18 ', 'Vite', 'Tailwind CSS', 'React Router v6', 'React Context + useReducer', 'fetch API nativa', 'Google Apps Script', 'typescript','Google Sheets','Google Drive','Gmail (GAS MailApp)','Vercel '],
     links: {
       github: 'https://github.com/CamiloTechCore/CRM_SST_Gestion',
     },
