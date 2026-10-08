@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
-import { Link as ScrollLink, scroller } from 'react-scroll';
+import { scroller } from 'react-scroll';
 import { Link as RouterLink, useLocation, useNavigate } from 'react-router-dom';
 import {
+  FiMessageSquare,
   FiSun,
   FiMoon,
   FiMenu,
@@ -81,7 +82,7 @@ const Header = ({ theme, toggleTheme }) => {
             </a>
           </div>
 
-          <div className="hidden md:block">
+          <div className="hidden xl:block">
             <ul className="flex items-center space-x-2 lg:space-x-3 text-gray-600 dark:text-gray-300 font-medium">
               <li>
                 <button
@@ -175,8 +176,18 @@ const Header = ({ theme, toggleTheme }) => {
             </div>
             
             <button
+              type="button"
+              onClick={() => { setIsMenuOpen(false); navigateToSection('/contact', 'contact'); }}
+              aria-label={t('header.contact')}
+              title={t('header.contact')}
+              className={`${navBtnClasses} !p-2.5 !text-blue-600 dark:!text-blue-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500`}
+            >
+              <FiMessageSquare size={20} />
+            </button>
+
+            <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="md:hidden p-2 z-50 text-gray-800 dark:text-gray-200"
+              className="xl:hidden p-2 z-50 text-gray-800 dark:text-gray-200"
               aria-label="Menu"
             >
               {isMenuOpen ? <FiX size={24} /> : <FiMenu size={24} />}

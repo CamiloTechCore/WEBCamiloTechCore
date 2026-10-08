@@ -4,6 +4,8 @@ import { FiGithub, FiExternalLink } from 'react-icons/fi';
 function ProjectCard({ project }) { 
   const { title, description, imageUrl, tags, links } = project;
 
+  const liveUrl = links?.live || links?.url;
+
   return (
     <div className="bg-white/60 dark:bg-gray-900/60 backdrop-blur-xl rounded-3xl shadow-[0_8px_32px_0_rgba(31,38,135,0.06)] dark:shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] hover:shadow-2xl border border-white/70 dark:border-white/10 overflow-hidden flex flex-col justify-between transform hover:-translate-y-1.5 transition-all duration-300">
       <div>
@@ -49,9 +51,9 @@ function ProjectCard({ project }) {
             <FiGithub size={18} />
           </a>
         )}
-        {links?.live && (
+        {liveUrl && (
           <a
-            href={links.live}
+            href={liveUrl}
             target="_blank"
             rel="noopener noreferrer"
             title="Ver sitio web"

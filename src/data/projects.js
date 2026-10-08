@@ -55,12 +55,13 @@ export const projects = [
     imageUrl: project5Img,
     tags: ['React 19 ', 'React Flow', 'Vite', 'Javascript', 'HTML', 'Google Apps Script', 'CSS', 'typescript'],
     links: {
+      live: 'https://drip-inky.vercel.app/',
       github: 'https://github.com/CamiloTechCore/Drip',
     },
   },
   {
     id: 6,
-    title: 'CRT SST gestion documental',
+    title: 'CRM SST gestion documental',
     description: 'CRT SST gestion documental es una plataforma diseñada para la gestión eficiente de documentos relacionados con la seguridad y salud en el trabajo, facilitando el control y seguimiento de la documentación requerida.',
     imageUrl: project6Img,
     tags: ['React 19 ', 'React Flow', 'Vite', 'Javascript', 'HTML', 'Google Apps Script', 'CSS', 'typescript'],

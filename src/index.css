@@ -30,24 +30,53 @@ html, body, #root {
 
 .services-carousel-track {
   display: flex;
-  gap: 1rem;
   width: max-content;
-  padding: 0.5rem 1rem 0.75rem;
-  animation: services-scroll 32s linear infinite;
+  padding-block: 0.5rem 0.75rem;
+  animation: services-scroll 64s linear infinite;
+  will-change: transform;
+}
+
+/* Both groups include their trailing gap, so half the track is one exact cycle. */
+.services-carousel-group {
+  display: flex;
+  flex-shrink: 0;
+  gap: 1rem;
+  padding-right: 1rem;
+}
+
+.services-carousel-track:has(:focus-visible) {
+  animation-play-state: paused;
 }
 
 @keyframes services-scroll {
-  from {
-    transform: translateX(0);
-  }
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
 
-  to {
-    transform: translateX(calc(-50% - 0.5rem));
-  }
+.service-visual-flow {
+  animation: service-flow 3s linear infinite;
+}
+
+.service-visual-orbit {
+  animation: service-flow 8s linear infinite;
+}
+
+.service-visual-pulse {
+  animation: service-pulse 3s ease-in-out infinite;
+}
+
+@keyframes service-flow {
+  to { stroke-dashoffset: -48; }
+}
+
+@keyframes service-pulse {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.2); }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .services-carousel-track {
-    animation-play-state: paused;
-  }
+  .services-carousel-mask { overflow-x: auto; }
+  .services-carousel-track { animation: none; }
+  .services-carousel-group[aria-hidden="true"] { display: none; }
+  .service-visual-flow, .service-visual-pulse, .service-visual-orbit { animation: none; }
 }
